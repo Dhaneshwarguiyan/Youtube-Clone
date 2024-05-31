@@ -1,0 +1,262 @@
+:root {
+    --black:#111111;
+    --lightBlack:#272727;
+    --lightWhite:#505050;
+    --white:#F1F1F1;
+    --yt-red:rgb(252, 8, 8);
+    --nav-height: 70px;
+    --body-height: calc(100vh - 70px);
+    --side-bar-open:15%;
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    background: var(--black);
+}
+
+.app-body{
+    display: flex;
+}
+
+.feed-open{
+    min-width: calc(86% - 20px);
+    min-height: var(--body-height);
+}
+.feed-closed{
+    min-width: calc(100% - 5% - 20px);
+}
+
+
+
+/* *****************************************************************   Navbar   ************************************************************************************** */
+
+
+.nav{
+    height: var(--nav-height);
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5em 1em;
+}
+.nav-left{
+    margin-left: 3px;
+    width: 180px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+} 
+
+
+/* *********  search bar  *********** */
+.search-bar{
+    width: 400px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid rgb(122, 122, 122);
+    border-radius: 50px;
+    padding: 1px 20px;
+    color: white;
+    text-shadow: 0 0 5px rgba(0,0,0,0.9); 
+}
+.search-area{
+    border: none;
+    width: 340px;
+    color: white;
+    font-size: 18px;
+    font-weight: 400;
+}:focus{
+    outline: none;
+}
+.nav-search-mob{
+    display: none;
+}
+
+/* *********  right bar   ******** */
+
+.nav-right{
+    display: flex;
+    width: 100px;
+    justify-content: space-between;
+    align-items: center;
+}
+.nav-profile{
+    width: 35px;
+    aspect-ratio: 1/1;
+    font-size: 20px;
+    background: gray;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+/* ********** Media queries  *********** */
+@media (max-width:450px) {
+    .nav{
+        padding: 0.5em 0.4em;
+        height: 50px;
+    }
+    .nav-left{
+        width: 150px;
+    }
+    .nav-right{
+        width: 90px;
+    }
+    .nav-profile{
+        margin-right: 0px;
+        position: relative;
+        transform: translateX(5px);
+    }
+    .nav-left img{
+        height: 25px;
+    }
+    .search-bar{
+        display: none;
+    }
+    .nav-search-mob{
+        display: block;
+    }
+    .nav-not{
+        display: none;
+    }
+}
+
+
+
+/* *********************sidebar***************** */
+.side-open{
+    min-width: 14%;
+    height: var(--body-height);
+    color: rgb(211, 211, 211);
+    margin-right: 20px;
+}
+.side-closed{
+    min-width: 5%;
+    height: var(--body-height);
+    color: rgb(224, 224, 224);
+    margin-right: 20px;
+}
+
+.side-tiles-open{
+    font-size: 20px;
+    border-radius: 30px;
+    padding: 20px 20px;
+    display: flex;
+}
+.side-tiles-closed{
+    display: flex;
+    flex-direction: column;
+    font-size: 13px;
+    border-radius: 8px;
+    padding: 20px 20px;
+    display: flex;
+    gap: 5px;
+    
+}
+.side-icons-open{
+    margin-right: 20px;
+    font-size: 25px;
+}
+.side-icons-closed{
+    margin-right: 20px;
+    font-size: 30px;
+}
+
+.active{
+    background: #5a5a5a;
+    color: white;
+}
+.active-icons{
+    background: #5a5a5a;
+    color: var(--yt-red)
+}
+.active-closed{
+    color: var(--yt-red)
+}
+
+/* ********************************** video card **************************************** */
+
+.vid{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.vid1{
+    /* border: 2px solid white; */
+    background: var(--lightBlack);
+    margin: 5px 10px;
+    height: 28rem;
+}
+.vid-thm{
+    background: #555454;
+    width: 24rem;
+    height: 12rem;
+    border-radius: 12px;
+}
+.vid-thm1{
+    width: 100%;
+}
+
+
+.vid-desc{
+    display: flex;
+    gap: 5px;
+}
+.vid-desc1{
+    background: var(--lightBlack);
+}
+.vid-para1{
+    background: #555454;
+    width:18rem;
+    height: 1.5rem;
+    border-radius: 12px;
+}
+.vid-para11{
+    background: var(--lightBlack);
+    font-size: 20px;
+    font-weight: 550;
+    padding: 10px;
+    padding-top: 15px;
+}
+.vid-para21{
+    background: var(--lightBlack);
+    padding: 10px;
+    padding-top: 0px;
+    color: rgb(252, 67, 67);
+    display: flex;
+    gap: 10px;
+}
+.vid-para2{
+    background: #555454;
+    width: 15rem;
+    height: 1.5rem;
+    margin-top: 5px;
+    border-radius: 12px;
+}
+.skeleton{
+    background-image: linear-gradient(120deg,rgb(121, 121, 121)50%,rgb(156, 156, 156)60%,rgb(156, 156, 156)61%,rgb(121, 121, 121)70%);
+    background-position: 100% 0px;
+    background-size: 200%;
+    animation: wave 1.5s infinite;
+}
+@keyframes wave {
+    0%{
+            background-position: 100% 0px;
+    }
+    100%{
+        background-position: -100% 0px;
+    }
+}
+
+/* ***************************************************  feed  *************************************** */
+.feed-main{
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    row-gap: 15px;
+    color: white;
+    /* flex-wrap: wrap;
+    font-size: xx-large; */
+}

@@ -1,25 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import './components/styles.css'
+import { StateProvider } from './utils/StateProvider';
+import Feed from './components/Feed.jsx';
+import Navbar from './components/Navbar.jsx';
+import SideBar from './components/SideBar.jsx';
 
-function App() {
+
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <StateProvider>
+       <div className='app'>
+        <Navbar />
+        <div className='app-body'>
+        <SideBar />
+        <Feed />
+        </div>
+       </div>
+    </StateProvider>
+  )
 }
 
 export default App;
