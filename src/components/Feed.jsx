@@ -1,12 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useStateProvider } from "../utils/StateProvider";
 import VideoCard from "./VideoCard.jsx";
 import getData from "../utils/apiEndpoint.js";
 import { reducerCases } from "../utils/reducer.js";
-import convert_form from "../utils/DataHandler.js";
 
 const Feed = () => {
-  const [{ loading, sideBar, activeTab, data }, dispatch] = useStateProvider();
+  const [{ sideBar, activeTab, data }, dispatch] = useStateProvider();
 
   useEffect(()=>{
         let url2 = `search?q=${activeTab}&part=snippet&regionCode=IN&type=video&maxResults=50&order=date`

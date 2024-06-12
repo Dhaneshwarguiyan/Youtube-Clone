@@ -10,7 +10,6 @@ import { convert_date, convert_form } from "../utils/DataHandler";
 import { useEffect } from "react";
 import getData from "../utils/apiEndpoint";
 import { reducerCases } from "../utils/reducer";
-import placeholder from '../assets/images.png';
 
 const VideoPlayer = () => {
   const [desc,setDesc] = useState(false);

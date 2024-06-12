@@ -7,8 +7,7 @@ import Navbar from './components/Navbar.jsx';
 import SideBar from './components/SideBar.jsx';
 import VideoPlayer from './components/VideoPlayer.jsx';
 import ChannelDisplay from './components/ChannelDisplay.jsx';
-import { reducerCases } from './utils/reducer.js';
-import { useStateProvider } from './utils/StateProvider';
+
 const App = () => {
   const [searchActive,setSearchActive] = useState(false);
   const clickHandler = ()=>{

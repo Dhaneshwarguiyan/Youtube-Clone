@@ -1,10 +1,8 @@
 import React from "react";
-import { useStateProvider } from "../utils/StateProvider.jsx";
 import { FaCheckCircle } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 const VideoCard = ({ items }) => {
-  const [{ loading }] = useStateProvider();
   return (
     <div className="vid">
       {!items ? (

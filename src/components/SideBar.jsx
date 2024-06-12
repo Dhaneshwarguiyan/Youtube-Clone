@@ -6,10 +6,9 @@ import { SiYoutubegaming } from "react-icons/si";
 import { useStateProvider } from "../utils/StateProvider";
 import { reducerCases } from "../utils/reducer";
 import { Link } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 
 const SideBar = () => {
-  const [width, setWidth] = useState(window.innerWidth);
   const [{ sideBar, activeTab }, dispatch] = useStateProvider();
   const activeHandler = (current) => {
     dispatch({ type: reducerCases.ACTIVE_TAB, active: current });
@@ -17,7 +16,6 @@ const SideBar = () => {
   };
   useEffect(() => {
     const handleResize = () => {
-      setWidth(window.innerWidth);
       if (sideBar) {
         if (window.innerWidth <= 600 && window.innerWidth >= 500) {
           dispatch({ type: reducerCases.SET_MOBILE_VIEW });
